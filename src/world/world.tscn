@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c1mos3voqrhfd"]
+
+[ext_resource type="PackedScene" uid="uid://dn4phws75yuxp" path="res://src/character/character.tscn" id="1_6fy3g"]
+[ext_resource type="PackedScene" uid="uid://xl4l2ikv1chi" path="res://src/platform/platfomr.tscn" id="2_jte2u"]
+[ext_resource type="PackedScene" uid="uid://eo7nnjcdvlrs" path="res://src/killplane/killplane.tscn" id="3_jte2u"]
+
+[node name="World" type="Node3D" unique_id=339938244]
+
+[node name="player" parent="." unique_id=2107079294 instance=ExtResource("1_6fy3g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3685299, 0)
+
+[node name="platfomr" parent="." unique_id=1445447241 instance=ExtResource("2_jte2u")]
+
+[node name="platfomr2" parent="." unique_id=1518682775 instance=ExtResource("2_jte2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5478013, 0, 0)
+
+[node name="platfomr3" parent="." unique_id=807100208 instance=ExtResource("2_jte2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2054586, 1.7739878, 0)
+
+[node name="platfomr4" parent="." unique_id=1719712374 instance=ExtResource("2_jte2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.207476, 3.9365206, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=349493866]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 115, 0)
+
+[node name="killplane" parent="." unique_id=1730706260 instance=ExtResource("3_jte2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.893592, 0)

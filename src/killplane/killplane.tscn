@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://eo7nnjcdvlrs"]
+
+[ext_resource type="Script" uid="uid://dp1qn7nunkpmu" path="res://src/killplane/killplane.gd" id="1_vq8gh"]
+[ext_resource type="Shape3D" uid="uid://db2q27i3iqao2" path="res://ourplatform.tres" id="1_xyaov"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xyaov"]
+size = Vector2(20, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vq8gh"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="killplane" type="Area3D" unique_id=1633594195]
+script = ExtResource("1_vq8gh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=102432541]
+shape = ExtResource("1_xyaov")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=903849691]
+mesh = SubResource("PlaneMesh_xyaov")
+surface_material_override/0 = SubResource("StandardMaterial3D_vq8gh")

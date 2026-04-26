@@ -1,0 +1,11 @@
+extends Control
+
+@onready var label: Label = $Label
+const Character = preload("uid://bhvnu3f5box3o")
+
+var score = 0
+@onready var player = get_tree().current_scene.find_child("player")
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	label.text = str(player.position.y)
