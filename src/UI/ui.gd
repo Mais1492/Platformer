@@ -8,4 +8,5 @@ var score = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	label.text = str(player.position.y)
+	if (player):
+		label.text = str(player.position.y)

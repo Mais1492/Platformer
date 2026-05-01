@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://ctm6ix65sobqs"]
+
+[ext_resource type="Script" uid="uid://dy6g7mbyoac7n" path="res://menu/menu.gd" id="1_j0t7f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0t7f"]
+bg_color = Color(0.55014277, 0.93192786, 0.92944825, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+shadow_color = Color(0.42256516, 0.60519534, 0.9999972, 0.6)
+
+[node name="Menu" type="Control" unique_id=730620531]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j0t7f")
+
+[node name="Panel" type="Panel" parent="." unique_id=1732090167]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_j0t7f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=735504603]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = -126.5
+offset_right = 146.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1151070399]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=151453100]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Exit"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_exit_pressed"]
