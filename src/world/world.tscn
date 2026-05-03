@@ -44,5 +44,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 0)
 a = Vector3(25, 5, 0)
 b = Vector3(37, 5, 0)
 
-[node name="platfom3x2" parent="." unique_id=1445447241 instance=ExtResource("6_l0av5")]
+[node name="speed_platforms" type="Node3D" parent="." unique_id=922706928]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 0)
+
+[node name="speed_platform" parent="speed_platforms" unique_id=1445447241 instance=ExtResource("6_l0av5")]
