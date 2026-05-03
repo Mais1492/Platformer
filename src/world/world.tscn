@@ -1,27 +1,46 @@
 [gd_scene format=3 uid="uid://c1mos3voqrhfd"]
 
 [ext_resource type="PackedScene" uid="uid://dn4phws75yuxp" path="res://src/character/character.tscn" id="1_6fy3g"]
-[ext_resource type="PackedScene" uid="uid://xl4l2ikv1chi" path="res://src/platform/platfomr.tscn" id="2_jte2u"]
+[ext_resource type="PackedScene" uid="uid://ck3057kt8nxpa" path="res://src/platform/platfom.tscn" id="2_jte2u"]
 [ext_resource type="PackedScene" uid="uid://eo7nnjcdvlrs" path="res://src/killplane/killplane.tscn" id="3_jte2u"]
+[ext_resource type="MeshLibrary" uid="uid://ct0x7cfly08gp" path="res://src/world/world-block.tres" id="4_bsf3i"]
+[ext_resource type="PackedScene" uid="uid://xl4l2ikv1chi" path="res://src/platform/movable_platfom.tscn" id="5_43c6p"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_43c6p"]
+friction = 0.0
 
 [node name="World" type="Node3D" unique_id=339938244]
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=557735309]
+transform = Transform3D(0.7253745, 0.31357637, -0.61278194, 0, 0.89021283, 0.45554492, 0.68835443, -0.33044067, 0.6457377, 0, 0, 0)
+light_color = Color(0.99999934, 0.9976197, 0.8316818, 1)
+light_energy = 1.5
+shadow_enabled = true
+directional_shadow_max_distance = 600.0
+
 [node name="player" parent="." unique_id=2107079294 instance=ExtResource("1_6fy3g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3685299, 0)
-
-[node name="platfomr" parent="." unique_id=1445447241 instance=ExtResource("2_jte2u")]
-
-[node name="platfomr2" parent="." unique_id=1518682775 instance=ExtResource("2_jte2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5478013, 0, 0)
-
-[node name="platfomr3" parent="." unique_id=807100208 instance=ExtResource("2_jte2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2054586, 1.7739878, 0)
-
-[node name="platfomr4" parent="." unique_id=1719712374 instance=ExtResource("2_jte2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.207476, 3.9365206, 0)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=349493866]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 115, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7825756, 0)
+top_level = true
 
 [node name="killplane" parent="." unique_id=1730706260 instance=ExtResource("3_jte2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.893592, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4465361, -2.8399591, -3.7321882)
+
+[node name="world-platform" type="GridMap" parent="." unique_id=722643415]
+mesh_library = ExtResource("4_bsf3i")
+physics_material = SubResource("PhysicsMaterial_43c6p")
+data = {
+"cells": PackedInt32Array(65534, 0, 1048576, 65535, 0, 1048576, 0, 0, 1048576, 1, 0, 1048576, 2, 0, 1048576, 3, 0, 1048576, 4, 0, 1048576, 5, 0, 1048576, 6, 0, 1048576, 7, 0, 1048576, 7, 65535, 1048576, 6, 65535, 1048576, 5, 65535, 1048576, 4, 65535, 1048576, 3, 65535, 1048576, 2, 65535, 1048576, 1, 65535, 1048576, 0, 65535, 1048576, 65535, 65535, 1048576, 65534, 65535, 1048576, 65534, 65534, 1048576, 65535, 65534, 1048576, 0, 65534, 1048576, 1, 65534, 1048576, 2, 65534, 1048576, 3, 65534, 1048576, 4, 65534, 1048576, 5, 65534, 1048576, 6, 65534, 1048576, 7, 65534, 1048576, 7, 65533, 1048576, 6, 65533, 1048576, 5, 65533, 1048576, 4, 65533, 1048576, 3, 65533, 1048576, 3, 65532, 1048576, 2, 65532, 1048576, 1, 65532, 1048576, 0, 65532, 1048576, 65535, 65532, 1048576, 65535, 65533, 1048576, 65534, 65533, 1048576, 0, 65533, 1048576, 1, 65533, 1048576, 2, 65533, 1048576, 7, 65532, 1048576, 6, 65532, 1048576, 5, 65532, 1048576, 4, 65532, 1048576, 1, 65531, 1048576, 0, 65531, 1048576, 65534, 65532, 1048576, 65534, 65531, 1048576, 65535, 65531, 1048576, 2, 65531, 1048576, 3, 65531, 1048576, 4, 65531, 1048576, 5, 65531, 1048576, 6, 65531, 1048576, 7, 65531, 1048576, 8, 1, 1048582, 65533, 1, 6, 65533, 65530, 1441798, 8, 65530, 655366, 7, 65530, 655365, 6, 65530, 655365, 5, 65530, 655365, 4, 65530, 655365, 3, 65530, 655365, 2, 65530, 655365, 1, 65530, 655365, 0, 65530, 655365, 65535, 65530, 655365, 65534, 65530, 655365, 8, 0, 1048581, 8, 65535, 1048581, 8, 65534, 1048581, 8, 65533, 1048581, 8, 65532, 1048581, 8, 65531, 1048581, 7, 1, 5, 6, 1, 5, 5, 1, 5, 4, 1, 5, 3, 1, 5, 2, 1, 5, 1, 1, 5, 0, 1, 5, 65535, 1, 5, 65534, 1, 5, 65533, 65531, 1441797, 65533, 65532, 1441797, 65533, 65533, 1441797, 65533, 65534, 1441797, 65533, 65535, 1441797, 65533, 0, 1441797, 65544, 0, 1048577, 65544, 65535, 1048577, 65543, 0, 1048578, 65543, 65535, 1048578, 65545, 0, 1048576, 131082, 0, 1048577, 131082, 65535, 1048577, 131081, 0, 1048578, 131081, 65535, 1048578, 65545, 65535, 1048576)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="platfom3x5" parent="." unique_id=1647884392 instance=ExtResource("2_jte2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 5, 0)
+
+[node name="moveable_platforms" type="Node3D" parent="." unique_id=695293542]
+
+[node name="movable_platfom" parent="moveable_platforms" unique_id=2069608374 instance=ExtResource("5_43c6p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 0)
+a = Vector3(25, 5, 0)
+b = Vector3(37, 5, 0)
+
+[node name="GridMap" type="GridMap" parent="." unique_id=619094707]
