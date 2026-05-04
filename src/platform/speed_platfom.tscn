@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b3qhlrspmvrnw"]
+
+[ext_resource type="ArrayMesh" uid="uid://cujasntbq3g0" path="res://assets/models/speed-block.tres" id="1_gnwei"]
+[ext_resource type="Script" uid="uid://umybxtldgl3r" path="res://src/platform/speed_platfom.gd" id="2_script"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v5vuq"]
+size = Vector3(6, 2, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_area"]
+size = Vector3(6, 0.5, 4)
+
+[node name="platfom3x2" type="StaticBody3D" unique_id=1445447241]
+script = ExtResource("2_script")
+
+[node name="Block" type="MeshInstance3D" parent="." unique_id=1444497145]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+mesh = ExtResource("1_gnwei")
+
+[node name="Block2" type="MeshInstance3D" parent="." unique_id=1897606336]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+mesh = ExtResource("1_gnwei")
+
+[node name="Block3" type="MeshInstance3D" parent="." unique_id=1394042723]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1)
+mesh = ExtResource("1_gnwei")
+
+[node name="Block4" type="MeshInstance3D" parent="." unique_id=2132858851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1)
+mesh = ExtResource("1_gnwei")
+
+[node name="Block5" type="MeshInstance3D" parent="." unique_id=1415669600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
+mesh = ExtResource("1_gnwei")
+
+[node name="Block6" type="MeshInstance3D" parent="." unique_id=348309319]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1)
+mesh = ExtResource("1_gnwei")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=119006548]
+shape = SubResource("BoxShape3D_v5vuq")
+
+[node name="SpeedArea" type="Area3D" parent="." unique_id=220001001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpeedArea" unique_id=220001002]
+shape = SubResource("BoxShape3D_area")
