@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c1mos3voqrhfd"]
 
 [ext_resource type="PackedScene" uid="uid://dn4phws75yuxp" path="res://src/character/character.tscn" id="1_6fy3g"]
+[ext_resource type="Script" uid="uid://d4grihy235hsc" path="res://src/world/world.gd" id="1_hg6dy"]
 [ext_resource type="PackedScene" uid="uid://ck3057kt8nxpa" path="res://src/platform/platfom.tscn" id="2_jte2u"]
 [ext_resource type="PackedScene" uid="uid://eo7nnjcdvlrs" path="res://src/killplane/killplane.tscn" id="3_jte2u"]
 [ext_resource type="MeshLibrary" uid="uid://ct0x7cfly08gp" path="res://src/world/blocks/world-block.tres" id="4_bsf3i"]
@@ -13,6 +14,7 @@
 friction = 0.0
 
 [node name="World" type="Node3D" unique_id=339938244]
+script = ExtResource("1_hg6dy")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=557735309]
 transform = Transform3D(0.7253745, 0.31357637, -0.61278194, 0, 0.89021283, 0.45554492, 0.68835443, -0.33044067, 0.6457377, 0, 0, 0)

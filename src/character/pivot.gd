@@ -7,10 +7,6 @@ extends Node3D
 @onready var spring_arm: SpringArm3D = $SpringArm3D
 @onready var camera: Camera3D = $SpringArm3D/Camera3D
 
-func _ready() -> void:
-	
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
 func _input(event: InputEvent) -> void:
 	
 	if event is InputEventMouseMotion:
@@ -23,3 +19,4 @@ func _input(event: InputEvent) -> void:
 
 func _process(_delta: float) -> void:
 	pass
+	
