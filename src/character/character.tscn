@@ -1,19 +1,38 @@
 [gd_scene format=3 uid="uid://dn4phws75yuxp"]
 
 [ext_resource type="Script" uid="uid://bhvnu3f5box3o" path="res://src/character/character.gd" id="1_yny20"]
+[ext_resource type="Script" path="res://src/character/pivot.gd" id="2_2p3op"]
+[ext_resource type="Shader" path="res://src/character/simpleSilhouetteShader.gdshader" id="3_8mo58"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vu45j"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_glpr6"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8mo58"]
+render_priority = 0
+shader = ExtResource("3_8mo58")
+shader_parameter/outline_color = Color(1, 0.85, 0, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8mo58"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_k8eue"]
+material = SubResource("StandardMaterial3D_8mo58")
 
 [node name="player" type="CharacterBody3D" unique_id=2107079294]
 script = ExtResource("1_yny20")
 
+[node name="Pivot" type="Node3D" parent="." unique_id=1574686126]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6035888, 0)
+script = ExtResource("2_2p3op")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Pivot" unique_id=373287455]
+spring_length = 5.0
+margin = 0.1
+
+[node name="Camera3D" type="Camera3D" parent="Pivot" unique_id=355020559]
+transform = Transform3D(1, 0, 0, 0, 0.95746565, 0.28854722, 0, -0.28854722, 0.95746565, 0, 0.64206696, 2.914651)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=813852866]
 shape = SubResource("SphereShape3D_vu45j")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=577916577]
-mesh = SubResource("SphereMesh_glpr6")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=277017427]
-transform = Transform3D(1, 0, 0, 0, 0.9629699, 0.26960897, 0, -0.26960897, 0.9629699, 0, 1.5, 3.5)
+[node name="NormalMesh" type="MeshInstance3D" parent="." unique_id=577916577]
+material_overlay = SubResource("ShaderMaterial_8mo58")
+mesh = SubResource("SphereMesh_k8eue")

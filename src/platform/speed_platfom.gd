@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
 	for body in bodies_in_area:
 		if body is CharacterBody3D:
 			body.speed_multiplier = SPEED_MULTIPLIER
-			body.acceleration_multiplier = SPEED_MULTIPLIER
+			body.acceleration_multiplier = ACCELERATION_MULTIPLIER
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D:

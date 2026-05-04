@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b3qhlrspmvrnw"]
 
-[ext_resource type="ArrayMesh" uid="uid://cujasntbq3g0" path="res://assets/models/speed-block.tres" id="1_gnwei"]
+[ext_resource type="ArrayMesh" uid="uid://cujasntbq3g0" path="res://assets/models/single/speed-block.tres" id="1_gnwei"]
 [ext_resource type="Script" uid="uid://umybxtldgl3r" path="res://src/platform/speed_platfom.gd" id="2_script"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v5vuq"]
