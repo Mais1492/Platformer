@@ -1,7 +1,7 @@
 extends Control
 
 @onready var label: Label = $Label
-const Character = preload("uid://bhvnu3f5box3o")
+const CHARACTER = preload("uid://dn4phws75yuxp")
 
 var score = 0
 @onready var player = get_tree().current_scene.find_child("player")

@@ -6,6 +6,8 @@
 [ext_resource type="MeshLibrary" uid="uid://ct0x7cfly08gp" path="res://src/world/blocks/world-block.tres" id="4_bsf3i"]
 [ext_resource type="PackedScene" uid="uid://xl4l2ikv1chi" path="res://src/platform/movable_platfom.tscn" id="5_43c6p"]
 [ext_resource type="PackedScene" uid="uid://b3qhlrspmvrnw" path="res://src/platform/speed_platfom.tscn" id="6_l0av5"]
+[ext_resource type="PackedScene" uid="uid://cvmetj4l0mk7k" path="res://src/platform/jump_platfom.tscn" id="7_5kmgb"]
+[ext_resource type="PackedScene" uid="uid://cxh0thdsmdujs" path="res://src/platform/ice_platform.tscn" id="8_wg6dd"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_43c6p"]
 friction = 0.0
@@ -26,6 +28,9 @@ top_level = true
 [node name="killplane" parent="." unique_id=1730706260 instance=ExtResource("3_jte2u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.446536, -2.8399591, -3.7321882)
 
+[node name="platfom3x5" parent="." unique_id=1647884392 instance=ExtResource("2_jte2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 5, 0)
+
 [node name="world-platform" type="GridMap" parent="." unique_id=722643415]
 mesh_library = ExtResource("4_bsf3i")
 physics_material = SubResource("PhysicsMaterial_43c6p")
@@ -33,9 +38,6 @@ data = {
 "cells": PackedInt32Array(65534, 0, 1048576, 65535, 0, 1048576, 0, 0, 1048576, 1, 0, 1048576, 5, 0, 1048576, 6, 0, 1048576, 7, 0, 1048576, 7, 65535, 1048576, 6, 65535, 1048576, 5, 65535, 1048576, 1, 65535, 1048576, 0, 65535, 1048576, 65535, 65535, 1048576, 65534, 65535, 1048576, 65534, 65534, 1048576, 65535, 65534, 1048576, 0, 65534, 1048576, 1, 65534, 1048576, 2, 65534, 1048576, 3, 65534, 1048576, 4, 65534, 1048576, 5, 65534, 1048576, 6, 65534, 1048576, 7, 65534, 1048576, 7, 65533, 1048576, 6, 65533, 1048576, 5, 65533, 1048576, 4, 65533, 1048576, 3, 65533, 1048576, 3, 65532, 1048576, 2, 65532, 1048576, 1, 65532, 1048576, 0, 65532, 1048576, 65535, 65532, 1048576, 65535, 65533, 1048576, 65534, 65533, 1048576, 0, 65533, 1048576, 1, 65533, 1048576, 2, 65533, 1048576, 7, 65532, 1048576, 6, 65532, 1048576, 5, 65532, 1048576, 4, 65532, 1048576, 1, 65531, 1048576, 0, 65531, 1048576, 65534, 65532, 1048576, 65534, 65531, 1048576, 65535, 65531, 1048576, 2, 65531, 1048576, 3, 65531, 1048576, 4, 65531, 1048576, 5, 65531, 1048576, 6, 65531, 1048576, 7, 65531, 1048576, 8, 1, 1048582, 65533, 1, 6, 65533, 65530, 1441798, 8, 65530, 655366, 7, 65530, 655365, 6, 65530, 655365, 5, 65530, 655365, 4, 65530, 655365, 3, 65530, 655365, 2, 65530, 655365, 1, 65530, 655365, 0, 65530, 655365, 65535, 65530, 655365, 65534, 65530, 655365, 8, 0, 1048581, 8, 65535, 1048581, 8, 65534, 1048581, 8, 65533, 1048581, 8, 65532, 1048581, 8, 65531, 1048581, 7, 1, 5, 6, 1, 5, 5, 1, 5, 4, 1, 5, 3, 1, 5, 2, 1, 5, 1, 1, 5, 0, 1, 5, 65535, 1, 5, 65534, 1, 5, 65533, 65531, 1441797, 65533, 65532, 1441797, 65533, 65533, 1441797, 65533, 65534, 1441797, 65533, 65535, 1441797, 65533, 0, 1441797, 65544, 0, 1048577, 65544, 65535, 1048577, 65543, 0, 1048578, 65543, 65535, 1048578, 65545, 0, 1048576, 131082, 0, 1048577, 131082, 65535, 1048577, 131081, 0, 1048578, 131081, 65535, 1048578, 65545, 65535, 1048576)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
-
-[node name="platfom3x5" parent="." unique_id=1647884392 instance=ExtResource("2_jte2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 5, 0)
 
 [node name="moveable_platforms" type="Node3D" parent="." unique_id=695293542]
 
@@ -48,3 +50,9 @@ b = Vector3(37, 5, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 0)
 
 [node name="speed_platform" parent="speed_platforms" unique_id=1445447241 instance=ExtResource("6_l0av5")]
+
+[node name="platfom3x2" parent="." unique_id=988621620 instance=ExtResource("7_5kmgb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.348034, 5, 4)
+
+[node name="platfom3x3" parent="." unique_id=1673907226 instance=ExtResource("8_wg6dd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.404266, 1.1307144, -6.556509)

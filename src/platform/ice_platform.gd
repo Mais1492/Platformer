@@ -1,7 +1,6 @@
 extends StaticBody3D
 
-const SPEED_MULTIPLIER = 5.0
-const ACCELERATION_MULTIPLIER = 2.0
+const FRICTION_MULTIPLIER = 0.1
 
 @onready var speed_area: Area3D = $SpeedArea
 
@@ -14,8 +13,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	for body in bodies_in_area:
 		if body is CharacterBody3D:
-			body.speed_multiplier = SPEED_MULTIPLIER
-			body.acceleration_multiplier = SPEED_MULTIPLIER
+			body.friction_multiplier = FRICTION_MULTIPLIER
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D:
@@ -24,5 +22,4 @@ func _on_body_entered(body: Node3D) -> void:
 func _on_body_exited(body: Node3D) -> void:
 	if body is CharacterBody3D:
 		bodies_in_area.erase(body)
-		body.speed_multiplier = 1.0
-		body.acceleration_multiplier = 1.0
+		body.friction_multiplier = 1.0
