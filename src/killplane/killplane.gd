@@ -6,8 +6,9 @@ func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body):
-	get_tree().change_scene_to_file("res://src/main_menu/main_menu.tscn")
-	queue_free()
+	if body is CharacterBody3D:
+		get_tree().change_scene_to_file("res://src/main_menu/main_menu.tscn")
+		queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

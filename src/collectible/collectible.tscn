@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://j7lfgn3jyp1v"]
+
+[ext_resource type="Script" uid="uid://5rmkw1w8rrck" path="res://src/collectible/collectible.gd" id="1_vheov"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0abfc"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_abvv2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d4eyp"]
+albedo_color = Color(1, 0, 1, 1)
+
+[node name="Power-Up" type="Area3D" unique_id=1529569970]
+script = ExtResource("1_vheov")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=680152161]
+shape = SubResource("CylinderShape3D_0abfc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=260163358]
+mesh = SubResource("CylinderMesh_abvv2")
+surface_material_override/0 = SubResource("StandardMaterial3D_d4eyp")

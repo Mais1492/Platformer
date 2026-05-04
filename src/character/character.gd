@@ -7,15 +7,34 @@ const BASE_JUMP_VELOCITY = 10.5
 const BASE_ACCELERATION = 30.0
 const BASE_FRICTION = 12.0
 
+const SPEED_BUFF_MULT = 2.0
+const SPEED_BUFF_DURATION = 10.0
+
+var speed_buff_timer: float = 0.0
+var speed_buff_active := false
+
 var speed_multiplier: float = 1.0
 var jump_multiplier: float = 1.0
 var acceleration_multiplier: float = 1.0
 var friction_multiplier: float = 1.0
 
+signal speed_buff_changed(active: bool)
+
+func _ready():
+	add_to_group("character")
+	get_tree().call_group("ui", "register_player", self)
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta * 2
+
+	if speed_buff_active:
+		speed_buff_timer -= delta
+		if speed_buff_timer <= 0:
+			speed_multiplier = 1.0
+			speed_buff_active = false
+			speed_buff_changed.emit(false)
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -39,3 +58,9 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, BASE_FRICTION * friction_multiplier * delta)
 
 	move_and_slide()
+
+func activate_speed_buff():
+	speed_multiplier = SPEED_BUFF_MULT
+	speed_buff_timer = SPEED_BUFF_DURATION
+	speed_buff_active = true
+	speed_buff_changed.emit(true)

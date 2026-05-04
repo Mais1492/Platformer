@@ -1,12 +1,28 @@
 extends Control
 
+var score = 0	
+var player = null
+var buff_active := false
+
 @onready var label: Label = $Label
-const CHARACTER = preload("uid://dn4phws75yuxp")
+@onready var border: Panel = $Border
 
-var score = 0
-@onready var player = get_tree().current_scene.find_child("player")
+func set_player(p):
+	player = p
+	player.speed_buff_changed.connect(_on_speed_buff_changed)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if (player):
-		label.text = str(player.position.y)
+
+func _on_speed_buff_changed(active: bool):
+	buff_active = active
+
+
+func _process(delta):
+	if buff_active:
+		border.visible = true
+		border.modulate.a = 0.5 + sin(Time.get_ticks_msec() * 0.01) * 0.3
+	else:
+		border.visible = false
+
+func add_point():
+	score += 1
+	label.text = "Score: " + str(score)

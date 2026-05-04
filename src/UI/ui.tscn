@@ -2,6 +2,14 @@
 
 [ext_resource type="Script" uid="uid://540v733titwb" path="res://src/UI/ui.gd" id="1_gdotf"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gdotf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 0.28235295, 1)
+
 [node name="UI" type="Control" unique_id=960774349]
 layout_mode = 3
 anchors_preset = 15
@@ -16,3 +24,13 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Score:"
+
+[node name="Border" type="Panel" parent="." unique_id=730461737]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gdotf")

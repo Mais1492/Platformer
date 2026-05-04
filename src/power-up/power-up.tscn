@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://btdecsi3mt1wo"]
+
+[ext_resource type="Script" uid="uid://cj7ruqcvbary" path="res://src/power-up/power-up.gd" id="1_x3bfx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sewk8"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_2tof0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d4eyp"]
+albedo_color = Color(1, 1, 0.28235295, 1)
+metallic = 0.59
+metallic_specular = 0.51
+
+[node name="Power-Up" type="Area3D" unique_id=1529569970]
+script = ExtResource("1_x3bfx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=680152161]
+shape = SubResource("CapsuleShape3D_sewk8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=260163358]
+mesh = SubResource("CapsuleMesh_2tof0")
+surface_material_override/0 = SubResource("StandardMaterial3D_d4eyp")
