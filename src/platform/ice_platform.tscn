@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://cxh0thdsmdujs"]
 
-[ext_resource type="Script" path="res://src/platform/ice_platform.gd" id="1_ehusu"]
+[ext_resource type="Script" uid="uid://c81xeacswurox" path="res://src/platform/ice_platform.gd" id="1_ehusu"]
 [ext_resource type="Texture2D" uid="uid://dxt4wv2oudxte" path="res://assets/models/ice-blocks-v1_Snow014_1K-JPG_Roughness.png" id="2_p6mtk"]
 [ext_resource type="Texture2D" uid="uid://caglrhi3424b3" path="res://assets/models/ice-blocks-v1_Snow014_1K-JPG_NormalGL.jpg" id="3_o1pqg"]
 

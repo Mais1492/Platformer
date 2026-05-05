@@ -36,4 +36,16 @@ func add_point():
 		
 func _on_level_up():
 	level_label.text = "Level: " + str(level)
-	print("LEVEL UP!")
+	increase_stats()
+	ResourceSaver.save(player.stats, "user://player_stats.tres")
+	
+func increase_stats():
+	print("STAT INCREASE!")
+	# TODO add level up dialog
+	#player.stats.speed += 1
+	#player.stats.jump_velocity += 1
+	#player.stats.acceleration += 1
+	#player.stats.friction += 1
+	#player.stats.speed_buff_mult += 1
+	#player.stats.speed_buff_duration += 1
+	

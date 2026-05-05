@@ -1,14 +1,9 @@
 extends CharacterBody3D
 
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
+@export var stats: PlayerStats
 
-const BASE_SPEED = 10.0
-const BASE_JUMP_VELOCITY = 10.5
-const BASE_ACCELERATION = 30.0
-const BASE_FRICTION = 12.0
-
-const SPEED_BUFF_MULT = 2.0
-const SPEED_BUFF_DURATION = 10.0
+var save_path = "user://player_stats.tres"
 
 var speed_buff_timer: float = 0.0
 var speed_buff_active := false
@@ -23,6 +18,11 @@ signal speed_buff_changed(active: bool)
 func _ready():
 	add_to_group("character")
 	get_tree().call_group("ui", "register_player", self)
+	
+	if ResourceLoader.exists(save_path):
+		stats = ResourceLoader.load(save_path)
+	else : stats = preload("res://src/character/player_stats.tres").duplicate()
+		
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = BASE_JUMP_VELOCITY * jump_multiplier
+		velocity.y = stats.jump_velocity * jump_multiplier
 		
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().change_scene_to_file("res://src/main_menu/main_menu.tscn")
@@ -48,19 +48,19 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
-	var target_velocity = direction * BASE_SPEED * speed_multiplier
+	var target_velocity = direction * stats.speed * speed_multiplier
 		
 	if direction != Vector3.ZERO:
-		velocity.x = move_toward(velocity.x, target_velocity.x, BASE_ACCELERATION * acceleration_multiplier * delta)
-		velocity.z = move_toward(velocity.z, target_velocity.z, BASE_ACCELERATION * acceleration_multiplier * delta)
+		velocity.x = move_toward(velocity.x, target_velocity.x, stats.acceleration * acceleration_multiplier * delta)
+		velocity.z = move_toward(velocity.z, target_velocity.z, stats.acceleration * acceleration_multiplier * delta)
 	else:
-		velocity.x = move_toward(velocity.x, 0, BASE_FRICTION * friction_multiplier * delta)
-		velocity.z = move_toward(velocity.z, 0, BASE_FRICTION * friction_multiplier * delta)
+		velocity.x = move_toward(velocity.x, 0, stats.friction * friction_multiplier * delta)
+		velocity.z = move_toward(velocity.z, 0, stats.friction * friction_multiplier * delta)
 
 	move_and_slide()
 
 func activate_speed_buff():
-	speed_multiplier = SPEED_BUFF_MULT
-	speed_buff_timer = SPEED_BUFF_DURATION
+	speed_multiplier = stats.speed_buff_mult
+	speed_buff_timer = stats.speed_buff_duration
 	speed_buff_active = true
 	speed_buff_changed.emit(true)
