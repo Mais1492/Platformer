@@ -14,7 +14,6 @@ func set_player(p):
 	player = p
 	player.speed_buff_changed.connect(_on_speed_buff_changed)
 
-
 func _on_speed_buff_changed(active: bool):
 	buff_active = active
 
