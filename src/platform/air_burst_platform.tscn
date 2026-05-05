@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://d3wj13puyj7pn"]
+
+[ext_resource type="ArrayMesh" uid="uid://cujasntbq3g0" path="res://assets/models/single/speed-block.tres" id="1_mesh"]
+[ext_resource type="Script" path="res://src/platform/air_burst_platform.gd" id="2_script"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_platform"]
+size = Vector3(6, 2, 4)
+
+[node name="air_burst_platform" type="StaticBody3D"]
+script = ExtResource("2_script")
+
+[node name="Block" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+mesh = ExtResource("1_mesh")
+
+[node name="Block2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+mesh = ExtResource("1_mesh")
+
+[node name="Block3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1)
+mesh = ExtResource("1_mesh")
+
+[node name="Block4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1)
+mesh = ExtResource("1_mesh")
+
+[node name="Block5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
+mesh = ExtResource("1_mesh")
+
+[node name="Block6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1)
+mesh = ExtResource("1_mesh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_platform")
+
+[node name="BurstParticles" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
+amount = 80
+lifetime = 0.35
+explosiveness = 1.0
+one_shot = true
+emitting = false
+
+[node name="BurstTimer" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
