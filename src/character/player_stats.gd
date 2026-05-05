@@ -7,3 +7,4 @@ class_name PlayerStats
 @export var friction: float = 12.0
 @export var speed_buff_mult = 2.0
 @export var speed_buff_duration = 10.0
+@export var double_jump_enabled = false

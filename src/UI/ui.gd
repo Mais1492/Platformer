@@ -41,6 +41,9 @@ func _on_level_up():
 	
 func increase_stats():
 	print("STAT INCREASE!")
+	if level >= 2 and not player.stats.double_jump_enabled:
+		player.stats.double_jump_enabled = true
+		print("Double Jump Unlocked!")
 	# TODO add level up dialog
 	#player.stats.speed += 1
 	#player.stats.jump_velocity += 1

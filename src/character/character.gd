@@ -12,6 +12,7 @@ var speed_multiplier: float = 1.0
 var jump_multiplier: float = 1.0
 var acceleration_multiplier: float = 1.0
 var friction_multiplier: float = 1.0
+var jump_count: int = 0
 
 signal speed_buff_changed(active: bool)
 
@@ -22,12 +23,16 @@ func _ready():
 	if ResourceLoader.exists(save_path):
 		stats = ResourceLoader.load(save_path)
 	else : stats = preload("res://src/character/player_stats.tres").duplicate()
+
+	stats.double_jump_enabled = false
 		
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta * 2
+	else:
+		jump_count = 0
 
 	if speed_buff_active:
 		speed_buff_timer -= delta
@@ -37,8 +42,10 @@ func _physics_process(delta: float) -> void:
 			speed_buff_changed.emit(false)
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	var max_jumps := 2 if stats.double_jump_enabled else 1
+	if Input.is_action_just_pressed("ui_accept") and jump_count < max_jumps:
 		velocity.y = stats.jump_velocity * jump_multiplier
+		jump_count += 1
 		
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().change_scene_to_file("res://src/main_menu/main_menu.tscn")
