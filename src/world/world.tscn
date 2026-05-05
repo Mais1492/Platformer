@@ -30,8 +30,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7825756, 0)
 top_level = true
 
 [node name="killplane" parent="." unique_id=1730706260 instance=ExtResource("3_jte2u")]
-transform = Transform3D(11.2, 0, 0, 0, 1, 0, 0, 0, 6.1, -0.55346394, -1.8399591, -5.732188)
-visible = false
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, -20, 0, 0)
 
 [node name="world-platform" type="GridMap" parent="." unique_id=722643415]
 mesh_library = ExtResource("4_bsf3i")

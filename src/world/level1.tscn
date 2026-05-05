@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dypueii3foj1j"]
+[gd_scene format=3 uid="uid://bgwvj64gsmebw"]
 
 [ext_resource type="PackedScene" uid="uid://dn4phws75yuxp" path="res://src/character/character.tscn" id="1_5n4uq"]
 [ext_resource type="PackedScene" uid="uid://eo7nnjcdvlrs" path="res://src/killplane/killplane.tscn" id="2_3akyf"]
@@ -22,7 +22,7 @@ shadow_enabled = true
 directional_shadow_max_distance = 600.0
 
 [node name="player" parent="." unique_id=2107079294 instance=ExtResource("1_5n4uq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.935196, 2.1064339, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.935196, 3.1064339, 0)
 top_level = true
 
 [node name="killplane" parent="." unique_id=1730706260 instance=ExtResource("2_3akyf")]
@@ -53,6 +53,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 0)
 
 [node name="jump platform" parent="." unique_id=988621620 instance=ExtResource("7_7wtv2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.093834, 8.685273, 0.11695862)
+jump_multiplier = 5.0
 
 [node name="platfom3x3" parent="." unique_id=1673907226 instance=ExtResource("8_6ogk5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.008327, 4.8093286, -0.020493984)
