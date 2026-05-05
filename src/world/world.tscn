@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://dn4phws75yuxp" path="res://src/character/character.tscn" id="1_6fy3g"]
 [ext_resource type="Script" uid="uid://d4grihy235hsc" path="res://src/world/world.gd" id="1_hg6dy"]
-[ext_resource type="PackedScene" uid="uid://ck3057kt8nxpa" path="res://src/platform/platfom.tscn" id="2_jte2u"]
 [ext_resource type="PackedScene" uid="uid://eo7nnjcdvlrs" path="res://src/killplane/killplane.tscn" id="3_jte2u"]
 [ext_resource type="MeshLibrary" uid="uid://ct0x7cfly08gp" path="res://src/world/blocks/world-block.tres" id="4_bsf3i"]
 [ext_resource type="PackedScene" uid="uid://b3qhlrspmvrnw" path="res://src/platform/speed_platfom.tscn" id="6_l0av5"]
@@ -10,7 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://cxh0thdsmdujs" path="res://src/platform/ice_platform.tscn" id="8_wg6dd"]
 [ext_resource type="PackedScene" uid="uid://j7lfgn3jyp1v" path="res://src/collectible/collectible.tscn" id="10_ocs7n"]
 [ext_resource type="PackedScene" uid="uid://btdecsi3mt1wo" path="res://src/power-up/power-up.tscn" id="11_jsigt"]
-[ext_resource type="PackedScene" path="res://src/platform/air_burst_platform.tscn" id="12_lid7q"]
+[ext_resource type="PackedScene" uid="uid://dee2lbbqu3p3c" path="res://src/platform/destroyable_block.tscn" id="11_lid7q"]
+[ext_resource type="PackedScene" uid="uid://d3wj13puyj7pn" path="res://src/platform/air_burst_platform.tscn" id="12_lid7q"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_43c6p"]
 friction = 0.0
@@ -30,10 +30,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7825756, 0)
 top_level = true
 
 [node name="killplane" parent="." unique_id=1730706260 instance=ExtResource("3_jte2u")]
-transform = Transform3D(11.2, 0, 0, 0, 1, 0, 0, 0, 6.1, 3.446536, -2.8399591, -3.7321882)
-
-[node name="platfom3x5" parent="." unique_id=1647884392 instance=ExtResource("2_jte2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 5, 0)
+transform = Transform3D(11.2, 0, 0, 0, 1, 0, 0, 0, 6.1, -0.55346394, -1.8399591, -5.732188)
+visible = false
 
 [node name="world-platform" type="GridMap" parent="." unique_id=722643415]
 mesh_library = ExtResource("4_bsf3i")
@@ -79,3 +77,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.143567, 3.356101, 0)
 
 [node name="air_burst_platform" parent="." unique_id=153738816 instance=ExtResource("12_lid7q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 0)
+
+[node name="destroyable_block" parent="." unique_id=1528708697 instance=ExtResource("11_lid7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 5, 0)
