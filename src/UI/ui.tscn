@@ -19,11 +19,22 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gdotf")
 
-[node name="Label" type="Label" parent="." unique_id=619984170]
+[node name="Score-Label" type="Label" parent="." unique_id=619984170]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Score:"
+text = "Score: 0"
+
+[node name="Level-Label" type="Label" parent="." unique_id=609067338]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -22.5
+offset_right = 22.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Level: 1"
 
 [node name="Border" type="Panel" parent="." unique_id=730461737]
 visible = false

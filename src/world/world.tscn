@@ -70,5 +70,14 @@ metadata/_editor_floor_ = Vector3(0, 2, 0)
 [node name="Collectible" parent="." unique_id=1529569970 instance=ExtResource("10_ocs7n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.666428, 7.2274833, 0.38740945)
 
+[node name="Collectible2" parent="." unique_id=537129905 instance=ExtResource("10_ocs7n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.893009, 3.9464803, -5.5849876)
+
+[node name="Collectible4" parent="." unique_id=90044209 instance=ExtResource("10_ocs7n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.543642, 3.9464803, -5.5849876)
+
+[node name="Collectible3" parent="." unique_id=1545607618 instance=ExtResource("10_ocs7n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6028147, 3.9464803, -5.5849876)
+
 [node name="Power-Up" parent="." unique_id=2040463850 instance=ExtResource("11_jsigt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.143567, 3.356101, 0)
