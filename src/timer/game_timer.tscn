@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://psq2i3c22vj2"]
+
+[sub_resource type="GDScript" id="GDScript_74kcq"]
+script/source = "extends Timer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="GameTimer" type="Timer" unique_id=1938601560]
+wait_time = 30.0
+one_shot = true
+script = SubResource("GDScript_74kcq")

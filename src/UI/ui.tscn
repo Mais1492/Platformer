@@ -25,15 +25,25 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Score: 0"
 
-[node name="Level-Label" type="Label" parent="." unique_id=609067338]
+[node name="Timer-Label" type="Label" parent="." unique_id=1875872346]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -22.5
-offset_right = 22.5
+offset_left = -86.5
+offset_right = 86.5
 offset_bottom = 23.0
 grow_horizontal = 2
+text = "Remaining Time: 30.0s"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Level-Label" type="Label" parent="." unique_id=609067338]
+layout_mode = 1
+offset_left = 3.0
+offset_top = 17.0
+offset_right = 61.0
+offset_bottom = 40.0
 text = "Level: 1"
 
 [node name="Border" type="Panel" parent="." unique_id=730461737]

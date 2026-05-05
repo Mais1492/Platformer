@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Ui="*uid://d2aqighs5s3dy"
+GameTimer="*uid://psq2i3c22vj2"
 
 [editor]
 

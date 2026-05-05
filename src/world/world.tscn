@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://j7lfgn3jyp1v" path="res://src/collectible/collectible.tscn" id="10_ocs7n"]
 [ext_resource type="PackedScene" uid="uid://btdecsi3mt1wo" path="res://src/power-up/power-up.tscn" id="11_jsigt"]
 [ext_resource type="PackedScene" uid="uid://dee2lbbqu3p3c" path="res://src/platform/destroyable_block.tscn" id="11_lid7q"]
+[ext_resource type="PackedScene" uid="uid://n6o0mwd1wg2n" path="res://win_collectible/win.tscn" id="12_0wvc1"]
 [ext_resource type="PackedScene" uid="uid://d3wj13puyj7pn" path="res://src/platform/air_burst_platform.tscn" id="12_lid7q"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_43c6p"]
@@ -90,8 +91,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.348034, 5, -4)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83, 15, -8)
 
 [node name="platfom3x3" parent="Jump" unique_id=146819890 instance=ExtResource("7_5kmgb")]
-transform = Transform3D(0.5, -0.5, 0.7071067, 0.70710677, 0.70710677, -2.3102888e-08, -0.49999988, 0.49999994, 0.7071068, 133, 9, -18)
+transform = Transform3D(0.5, -0.5, 0.7071067, 0.70710677, 0.70710677, -2.3102888e-08, -0.49999988, 0.49999994, 0.7071068, 122.71901, 9, -18)
+
+[node name="platfom3x4" parent="Jump" unique_id=260509601 instance=ExtResource("7_5kmgb")]
+transform = Transform3D(0.09420428, -0.094204366, -0.99108577, 0.7071067, 0.7071067, -4.6205773e-08, 0.70080346, -0.7008034, 0.13322505, 129.38338, 9, 45.735477)
 
 [node name="platfom3x5" parent="." unique_id=127627559 instance=ExtResource("7_5kmgb")]
 transform = Transform3D(-0.3535534, 0.35355338, -0.8660254, 0.70710677, 0.70710677, -3.090862e-08, 0.6123724, -0.6123724, -0.5, 107, 9, 25)
 jump_multiplier = 6.0
+
+[node name="Win" parent="." unique_id=563600540 instance=ExtResource("12_0wvc1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 129.64908, 13.193046, 47.128548)
+
+[node name="Win2" parent="." unique_id=515339448 instance=ExtResource("12_0wvc1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2161255, 3.0368319, 2.9383745)

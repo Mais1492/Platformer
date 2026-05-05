@@ -6,6 +6,8 @@ var player = null
 var buff_active := false
 @onready var score_label: Label = $"Score-Label"
 @onready var level_label: Label = $"Level-Label"
+@onready var timer_label: Label = $"Timer-Label"
+
 @onready var border: Panel = $Border
 
 func set_player(p):
@@ -39,6 +41,9 @@ func _on_level_up():
 	increase_stats()
 	ResourceSaver.save(player.stats, "user://player_stats.tres")
 	
+func update_timer(time: float):
+	timer_label.text = "Remaining: " + str(int(ceil(time))) + "s"
+	
 func increase_stats():
 	print("STAT INCREASE!")
 	if level >= 2 and not player.stats.double_jump_enabled:
@@ -51,4 +56,3 @@ func increase_stats():
 	#player.stats.friction += 1
 	#player.stats.speed_buff_mult += 1
 	#player.stats.speed_buff_duration += 1
-	
