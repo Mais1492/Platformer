@@ -1,6 +1,5 @@
 extends StaticBody3D
-
-const JUMP_MULTIPLIER = 5.0
+@export var jump_multiplier: float = 2.0
 
 @onready var speed_area: Area3D = $SpeedArea
 
@@ -13,7 +12,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	for body in bodies_in_area:
 		if body is CharacterBody3D:
-			body.jump_multiplier = JUMP_MULTIPLIER
+			body.jump_multiplier = jump_multiplier
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D:
