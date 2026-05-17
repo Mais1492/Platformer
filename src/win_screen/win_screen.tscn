@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://di3bbiivp1qhy"]
 
-[ext_resource type="PackedScene" uid="uid://ctm6ix65sobqs" path="res://menu/menu.tscn" id="1_wruv5"]
+[ext_resource type="Script" uid="uid://ctmveusiy0ash" path="res://src/win_screen/win_screen.gd" id="1_jdrp1"]
+[ext_resource type="PackedScene" uid="uid://ctm6ix65sobqs" path="res://src/menu/menu.tscn" id="1_wruv5"]
 
 [node name="WinScreen" type="Control" unique_id=1201289219]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jdrp1")
 
 [node name="Menu" parent="." unique_id=730620531 instance=ExtResource("1_wruv5")]
 layout_mode = 1

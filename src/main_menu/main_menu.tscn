@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://yel51bt1abcp"]
 
 [ext_resource type="PackedScene" uid="uid://ctm6ix65sobqs" path="res://src/menu/menu.tscn" id="1_oa53l"]
+[ext_resource type="VideoStream" uid="uid://c0p5ko5276oe4" path="res://assets/video/menu.ogv" id="2_e0prm"]
 
 [node name="MainMenu" type="Control" unique_id=999528507]
 layout_mode = 3
@@ -10,10 +11,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="MenuVideoPlayer" type="VideoStreamPlayer" parent="." unique_id=453403014]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_e0prm")
+autoplay = true
+expand = true
+
 [node name="Menu" parent="." unique_id=730620531 instance=ExtResource("1_oa53l")]
 layout_mode = 1
 
 [node name="Label" type="Label" parent="." unique_id=2004079026]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -30,3 +43,5 @@ theme_override_colors/font_color = Color(0.16470589, 0.16470589, 0.38039216, 1)
 theme_override_font_sizes/font_size = 48
 text = "Main Menu"
 horizontal_alignment = 1
+
+[connection signal="finished" from="MenuVideoPlayer" to="Menu" method="_on_video_stream_player_finished"]

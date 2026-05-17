@@ -1,6 +1,7 @@
 extends Control
 
 const WORLD = preload("uid://c1mos3voqrhfd")
+@onready var v_box_container: VBoxContainer = $VBoxContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,3 +19,8 @@ func _on_start_pressed() -> void:
 func _on_exit_pressed() -> void:
 	get_tree().quit()
 	
+
+
+func _on_video_stream_player_finished() -> void:
+	v_box_container.visible = true
+	pass # Replace with function body.

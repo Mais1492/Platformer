@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bgwvj64gsmebw"]
+[gd_scene format=3 uid="uid://dypueii3foj1j"]
 
 [ext_resource type="PackedScene" uid="uid://dn4phws75yuxp" path="res://src/character/character.tscn" id="1_5n4uq"]
 [ext_resource type="PackedScene" uid="uid://eo7nnjcdvlrs" path="res://src/killplane/killplane.tscn" id="2_3akyf"]
