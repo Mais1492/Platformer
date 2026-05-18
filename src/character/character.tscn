@@ -2,11 +2,17 @@
 
 [ext_resource type="Script" uid="uid://bhvnu3f5box3o" path="res://src/character/character.gd" id="1_yny20"]
 [ext_resource type="Script" uid="uid://pnfbhv8jmi8q" path="res://src/character/pivot.gd" id="2_2p3op"]
+[ext_resource type="Shader" uid="uid://y3fm2kw07wio" path="res://src/character/simpleSilhouetteShader.gdshader" id="3_56uj1"]
 [ext_resource type="Texture2D" uid="uid://cwb7fy4hv20gd" path="res://assets/models/model_Color_9ecc4fa5-6b88-44f5-853e-1d2317ffd1ac.jpg" id="3_tntuy"]
 [ext_resource type="Texture2D" uid="uid://cxawt3ef1qdj6" path="res://assets/models/model_ORM_9ecc4fa5-6b88-44f5-853e-1d2317ffd1ac.jpg" id="4_56uj1"]
 [ext_resource type="Texture2D" uid="uid://bhgrijnnxbkjy" path="res://assets/models/model_NormalGL_9ecc4fa5-6b88-44f5-853e-1d2317ffd1ac.jpg" id="5_fi36g"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vu45j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_56uj1"]
+render_priority = 0
+shader = ExtResource("3_56uj1")
+shader_parameter/outline_color = Color(0.85, 0.85, 0.85, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eh18u"]
 resource_name = "tripo_material_9ecc4fa5-6b88-44f5-853e-1d2317ffd1ac"
@@ -76,4 +82,5 @@ shape = SubResource("SphereShape3D_vu45j")
 
 [node name="tripo_node_9ecc4fa5-6b88-44f5-853e-1d2317ffd1ac" type="MeshInstance3D" parent="." unique_id=1733395263]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+material_overlay = SubResource("ShaderMaterial_56uj1")
 mesh = SubResource("ArrayMesh_m366t")

@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_v38wf")
+double_jump_enabled = true
 metadata/_custom_type_script = "uid://dq8u2e2txpyiv"

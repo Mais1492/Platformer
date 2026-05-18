@@ -45,10 +45,8 @@ func update_timer(time: float):
 	timer_label.text = "Remaining: " + str(int(ceil(time))) + "s"
 	
 func increase_stats():
-	print("STAT INCREASE!")
 	if level >= 2 and not player.stats.double_jump_enabled:
 		player.stats.double_jump_enabled = true
-		#TODO ADD SFX
 		double_jump_label.visible = true
 		SFX.play("double-jump")
 		await get_tree().create_timer(1.0).timeout
@@ -59,6 +57,3 @@ func increase_stats():
 	#player.stats.speed += 1
 	#player.stats.jump_velocity += 1
 	#player.stats.acceleration += 1
-	#player.stats.friction += 1
-	#player.stats.speed_buff_mult += 1
-	#player.stats.speed_buff_duration += 1
