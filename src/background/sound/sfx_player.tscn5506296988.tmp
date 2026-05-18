@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cwktq7qoes876"]
+
+[ext_resource type="Script" uid="uid://b33byp726gqu8" path="res://src/background/sound/sfx_player.gd" id="1_mub4w"]
+
+[node name="SFX-Player" type="Node" unique_id=1517053717]
+script = ExtResource("1_mub4w")
+
+[node name="Audio-Player" type="AudioStreamPlayer" parent="." unique_id=619318446]

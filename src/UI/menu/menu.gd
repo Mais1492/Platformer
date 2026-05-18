@@ -3,6 +3,8 @@ extends Control
 const WORLD = preload("uid://c1mos3voqrhfd")
 @onready var v_box_container: VBoxContainer = $VBoxContainer
 
+@export var next_scene: String
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -13,8 +15,7 @@ func _process(delta: float) -> void:
 
 
 func _on_start_pressed() -> void:
-	# TODO EDIT SCENE
-	get_tree().change_scene_to_file("res://src/world/world.tscn")
+	get_tree().change_scene_to_file(next_scene)
 	
 func _on_exit_pressed() -> void:
 	get_tree().quit()

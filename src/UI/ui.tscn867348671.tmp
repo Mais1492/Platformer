@@ -23,29 +23,25 @@ script = ExtResource("1_gdotf")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
 text = "Score: 0"
 
 [node name="Timer-Label" type="Label" parent="." unique_id=1875872346]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -86.5
-offset_right = 86.5
+layout_mode = 0
+offset_right = 40.0
 offset_bottom = 23.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
 text = "Remaining Time: 30.0s"
 horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Level-Label" type="Label" parent="." unique_id=609067338]
 layout_mode = 1
-offset_top = 17.0
-offset_right = 58.0
-offset_bottom = 40.0
-theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -22.5
+offset_right = 22.5
+offset_bottom = 23.0
+grow_horizontal = 2
 text = "Level: 1"
 
 [node name="Border" type="Panel" parent="." unique_id=730461737]
@@ -57,21 +53,3 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_gdotf")
-
-[node name="Double-Jump-Label" type="Label" parent="." unique_id=12935772]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -90.0
-offset_top = -11.5
-offset_right = 90.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
-theme_override_font_sizes/font_size = 40
-text = "Double Jump unlocked!"

@@ -7,6 +7,7 @@ var buff_active := false
 @onready var score_label: Label = $"Score-Label"
 @onready var level_label: Label = $"Level-Label"
 @onready var timer_label: Label = $"Timer-Label"
+@onready var double_jump_label: Label = $"Double-Jump-Label"
 
 @onready var border: Panel = $Border
 
@@ -47,7 +48,13 @@ func increase_stats():
 	print("STAT INCREASE!")
 	if level >= 2 and not player.stats.double_jump_enabled:
 		player.stats.double_jump_enabled = true
-		print("Double Jump Unlocked!")
+		#TODO ADD SFX
+		double_jump_label.visible = true
+		SFX.play("double-jump")
+		await get_tree().create_timer(1.0).timeout
+		double_jump_label.visible = false
+
+		
 	# TODO add level up dialog
 	#player.stats.speed += 1
 	#player.stats.jump_velocity += 1

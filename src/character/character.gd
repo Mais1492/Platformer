@@ -67,6 +67,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func activate_speed_buff():
+	SFX.play("speed")
 	speed_multiplier = stats.speed_buff_mult
 	speed_buff_timer = stats.speed_buff_duration
 	speed_buff_active = true

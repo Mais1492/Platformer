@@ -8,5 +8,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _on_body_entered(body):
+	SFX.play("barrel")
 	Ui.add_point()
 	queue_free()

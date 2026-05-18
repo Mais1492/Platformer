@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://nbk6g8mlpve7"]
+
+[ext_resource type="AudioStream" uid="uid://i5mm0821560c" path="res://assets/music/world-theme.ogg" id="1_ibgvf"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" unique_id=854728389]
+stream = ExtResource("1_ibgvf")
+autoplay = true
+parameters/looping = true

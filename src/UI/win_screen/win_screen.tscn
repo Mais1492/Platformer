@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://di3bbiivp1qhy"]
+
+[ext_resource type="PackedScene" uid="uid://ctm6ix65sobqs" path="res://src/UI/menu/menu.tscn" id="1_bmch3"]
+[ext_resource type="Texture2D" uid="uid://c76r5do7d5iic" path="res://assets/image/win-screen.jpeg" id="1_fnahs"]
+
+[node name="WinScreen" type="Control" unique_id=1201289219]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=288702553]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -661.0
+offset_top = -353.0
+offset_right = 587.0
+offset_bottom = 479.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fnahs")
+
+[node name="Label" type="Label" parent="." unique_id=393029928]
+layout_mode = 1
+offset_right = 219.0
+offset_bottom = 137.0
+theme_override_colors/font_color = Color(0.16470589, 0.16470589, 0.38039216, 1)
+theme_override_font_sizes/font_size = 48
+text = "You Won!
+"
+horizontal_alignment = 1
+
+[node name="Menu" parent="." unique_id=730620531 instance=ExtResource("1_bmch3")]
+layout_mode = 1
+next_scene = "res://src/world/world.tscn"

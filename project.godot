@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Ui="*uid://d2aqighs5s3dy"
 GameTimer="*uid://psq2i3c22vj2"
+SFX="*uid://cwktq7qoes876"
 
 [editor]
 

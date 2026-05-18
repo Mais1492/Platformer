@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://yel51bt1abcp"]
 
-[ext_resource type="PackedScene" uid="uid://ctm6ix65sobqs" path="res://src/menu/menu.tscn" id="1_oa53l"]
-[ext_resource type="VideoStream" uid="uid://c0p5ko5276oe4" path="res://assets/video/menu.ogv" id="2_e0prm"]
+[ext_resource type="VideoStream" uid="uid://c0p5ko5276oe4" path="res://assets/video/menu.ogv" id="1_2xuxc"]
+[ext_resource type="PackedScene" uid="uid://ctm6ix65sobqs" path="res://src/UI/menu/menu.tscn" id="2_7lwn7"]
 
 [node name="MainMenu" type="Control" unique_id=999528507]
 layout_mode = 3
@@ -18,12 +18,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-stream = ExtResource("2_e0prm")
+stream = ExtResource("1_2xuxc")
 autoplay = true
 expand = true
 
-[node name="Menu" parent="." unique_id=730620531 instance=ExtResource("1_oa53l")]
+[node name="Menu" parent="." unique_id=730620531 instance=ExtResource("2_7lwn7")]
 layout_mode = 1
+next_scene = "res://src/world/world.tscn"
 
 [node name="Label" type="Label" parent="." unique_id=2004079026]
 visible = false
