@@ -20,9 +20,11 @@ func _ready():
 	add_to_group("character")
 	get_tree().call_group("ui", "register_player", self)
 	
-	stats = preload("res://src/character/player_stats.tres").duplicate()
+	if ResourceLoader.exists(save_path):
+		stats = ResourceLoader.load(save_path)
+	else : stats = preload("res://src/character/player_stats.tres").duplicate()
 
-	#stats.double_jump_enabled = false
+	stats.double_jump_enabled = false
 		
 
 func _physics_process(delta: float) -> void:
